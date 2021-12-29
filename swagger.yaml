@@ -1,0 +1,132 @@
+basePath: /
+consumes:
+- application/json
+info:
+  contact:
+    email: havvaozdemir34@gmail.com
+    name: Havva Ozdemir
+  description: Documentation of ScaleFlix API that represents movie and serie information
+    with all content
+  title: ScaleFlix API
+  version: 1.0.0
+paths:
+  /favorites:
+    get:
+      description: Gets fovarites from database given userId filter name and genre
+      operationId: queryparams
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+    post:
+      description: Adds fovarite to database
+      operationId: jsonbody
+      responses:
+        "201":
+          $ref: '#/responses/StatusCreated'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+      tags:
+      - with
+  /favorites/{id}:
+    delete:
+      description: Deletes fovarite from database
+      operationId: id
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+      tags:
+      - with
+  /movies:
+    get:
+      description: Gets movies from database filters name and genre
+      operationId: movieslist
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+    post:
+      description: Adds movie to database
+      operationId: body
+      responses:
+        "201":
+          $ref: '#/responses/StatusCreated'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+        "403":
+          $ref: '#/responses/StatusForbidden'
+          description: NotAllowedAction
+      tags:
+      - with
+  /movies/{id}:
+    delete:
+      description: Deletes media from database /series/{id}
+      operationId: body
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+        "403":
+          $ref: '#/responses/StatusForbidden'
+          description: NotAllowedAction
+      tags:
+      - with
+  /movies/id:
+    get:
+      description: Gets movie from database given id
+      operationId: movieslist
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+  /series:
+    get:
+      description: Gets series from database filters name and genre
+      operationId: serieslist
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+    post:
+      description: Adds serie to database
+      operationId: body
+      responses:
+        "201":
+          $ref: '#/responses/StatusCreated'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+        "403":
+          $ref: '#/responses/StatusForbidden'
+          description: NotAllowedAction
+      tags:
+      - with
+  /series/id:
+    get:
+      description: Gets serie from database given id
+      operationId: serie
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+  /suggestions:
+    get:
+      description: Gets fovarites from database given userId filter name and genre
+      operationId: api
+      responses:
+        "200":
+          $ref: '#/responses/StatusOK'
+        "400":
+          $ref: '#/responses/StatusBadRequest'
+produces:
+- application/json
+schemes:
+- http
+swagger: "2.0"

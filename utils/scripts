@@ -1,0 +1,9 @@
+SCRIPTS:
+insert into public.users(id,name, email, password, role)
+values (1,'user1', 'user1@gmail.com', 'user1123', 'user');
+
+insert into public.users(id,name, email, password, role)
+values (2,'user2', 'user2@gmail.com', 'user2111', 'user');
+
+insert into public.users(id,name, email, password, role)
+values (3,'user3', 'user3@gmail.com', 'user3222', 'admin')
